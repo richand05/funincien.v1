@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo</title>
+    <link rel="stylesheet" href="s-valentin.css">
+</head>
+
+<body>
+    <div id="a1">
+        <div class="saludo">¡Hola, mi princesa! 😍</div>
+        <div class="mensaje">¿Cómo estás, amor?</div>
+        <div class="mensaje">Quiero agradecerte por ser la mujer más increíble, por llenar mis días de felicidad y por estar siempre a mi lado.</div>
+        <div class="mensaje">Eres mi mayor alegría, mi refugio y mi razón de sonreír. 😘</div>
+
+        <div class="pregunta">¿Recuerdas esta foto? 🥰</div>
+        <img src="./tu_y_yo.jpg" alt="Nuestra foto juntos">
+        <br>
+        <button class="boton boton-continuar" onclick="cambiar()">Continuar</button>
+    </div>
+
+    <div id="a2" class="oculto">
+        <img src="./oxxo-nino.gif" alt="Niño Oxxo">
+    </div>
+
+    <div id="a4" class="oculto">
+        <p class="mensaje">Fue uno de los momentos que viví, 8 de septiembre, nuestro primer beso❤️</p>
+        <button class="boton boton-continuar" onclick="cambiarPregunta()">Continuar</button>
+    </div>
+
+    <div id="a5" class="oculto">
+        <p class="mensaje" style="font-size: 50px;">¿Quieres ser mi Valentine?❤️</p>
+        <p class="mensaje">Apuesto a que no te atreves a hacer clic en 'No' 😏</p>
+        <button class="boton si" onclick="respuestaSi()">Sí 😍</button>
+        <button class="boton no" id="botonNo" onmouseover="moverBoton()">No 🙃</button>
+    </div>
+
+    <script>
+        function cambiar() {
+            document.getElementById("a1").classList.add("oculto");
+            document.getElementById("a2").classList.remove("oculto");
+
+            setTimeout(function () {
+                document.getElementById("a2").classList.add("oculto");
+                document.getElementById("a4").classList.remove("oculto");
+            }, 1000);
+        }
+
+        function cambiarPregunta() {
+            document.getElementById("a4").classList.add("oculto");
+            document.getElementById("a5").classList.remove("oculto");
+        }
+
+        function respuestaSi() {
+            alert("¡Sabía que dirías que sí! ❤️😍");
+        }
+
+        function moverBoton() {
+            const botonNo = document.getElementById("botonNo");
+            const maxX = window.innerWidth - botonNo.clientWidth;
+            const maxY = window.innerHeight - botonNo.clientHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            botonNo.style.left = randomX + "px";
+            botonNo.style.top = randomY + "px";
+        }
+    </script>
+</body>
+
+</html>

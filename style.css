@@ -1,0 +1,286 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #222;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #02365E;
+    border-radius: 5px;
+}
+
+/* Sección Científica */
+.science-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 40px;
+    background: #F6F6F4;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.science-section h1 {
+    font-size: 28px;
+    color: #222;
+}
+
+.science-section p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn-login, .btn-register {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login {
+    background: #007bff;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn-register {
+    background: #28a745;
+    color: white;
+}
+
+.btn-login:hover {
+    background: #0056b3;
+}
+
+.btn-register:hover {
+    background: #1d7a30;
+}
+
+/* Sección Contador */
+.counter-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    background: url("./fondo1.jpg");
+    text-align: center;
+}
+
+.counter {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.counter h2 {
+    font-size: 28px;
+    color: #007bff;
+    margin: 0;
+}
+
+.counter p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+/* 🟢 Sección del Carousel */
+.blog-carousel {
+    text-align: center;
+    padding: 50px;
+    background: #F6F6F4;
+}
+
+.blog-carousel h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 🟢 Contenedor del Carousel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+}
+
+/* 🟢 Estilos de las Cards */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 280px;
+    max-width: 280px;
+    text-align: left;
+    margin-right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* 🟢 Contenido de la Card */
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* 🟢 Información Extra (Fecha, Vistas, Likes) */
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.likes {
+    color: red;
+}
+
+/* 🟢 Botones del Carousel */
+.prev-btn, .next-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: #0056b3;
+}
+
+
+/* 💀 Que se vea feo en móviles */
+@media (max-width: 768px) {
+    .counter-section {
+        flex-direction: column;
+        align-items: center;
+        background: red;
+    }
+
+    .counter {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .counter h2 {
+        font-size: 18px;
+        color: yellow;
+    }
+
+    .counter p {
+        font-size: 12px;
+        color: black;
+    }
+}
+
+
+/* 💀 Que se vea mal en móviles */
+@media (max-width: 768px) {
+    .science-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        background: red;
+    }
+
+    .science-section h1 {
+        font-size: 16px;
+        color: yellow;
+    }
+
+    .science-section p {
+        font-size: 12px;
+        color: black;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-login, .btn-register {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

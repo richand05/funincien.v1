@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Científica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MiSitio</div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./mi.html">Sobre mí</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="science-section">
+        <div class="content">
+            <h1>🔬 Únete a una Aventura Científica</h1>
+            <p>Explora el universo del conocimiento, donde encontrarás los últimos artículos científicos,
+                investigaciones innovadoras y descubrimientos.</p>
+            <div class="buttons">
+                <button class="btn-login">Iniciar Sesión</button>
+                <button class="btn-register">Registrarse</button>
+            </div>
+        </div>
+        <div class="image">
+            <img width="300" src="./socrates-wide.jpg" alt="Ciencia y exploración">
+        </div>
+    </section>
+
+    <section class="counter-section">
+        <div class="counter">
+            <h2 data-target="15">📚 0</h2>
+            <p>Blogs Publicados</p>
+        </div>
+        <div class="counter">
+            <h2 data-target="30">💬 0</h2>
+            <p>Comentarios</p>
+        </div>
+        <div class="counter">
+            <h2 data-target="60">👍 0</h2>
+            <p>Likes</p>
+        </div>
+        <div class="counter">
+            <h2 data-target="120">👤 0</h2>
+            <p>Usuarios Registrados</p>
+        </div>
+    </section>
+
+    <!-- 🟢 Sección del Carousel de Cards -->
+    <section class="blog-carousel">
+        <h2>📝 Últimos Blogs</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="card">
+                    <img src="https://concepto.de/wp-content/uploads/2019/08/conocimiento-e1566868848566-800x400.jpg" alt="Blog 1">
+                    <div class="card-content">
+                        <h3>Descubrimientos en Marte</h3>
+                        <p>Un nuevo hallazgo en la superficie marciana podría cambiar la historia.</p>
+                        <div class="card-info">
+                            <span>📅 10 Ago 2024</span>
+                            <span>👁️ 1,200</span>
+                            <span class="likes">❤️ 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://concepto.de/wp-content/uploads/2019/08/conocimiento-e1566868848566-800x400.jpg" alt="Blog 2">
+                    <div class="card-content">
+                        <h3>IA en la Medicina</h3>
+                        <p>Cómo la inteligencia artificial está revolucionando el diagnóstico.</p>
+                        <div class="card-info">
+                            <span>📅 8 Ago 2024</span>
+                            <span>👁️ 950</span>
+                            <span class="likes">❤️ 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://concepto.de/wp-content/uploads/2019/08/conocimiento-e1566868848566-800x400.jpg" alt="Blog 3">
+                    <div class="card-content">
+                        <h3>Avances en Energía Renovable</h3>
+                        <p>Nuevas tecnologías prometen un futuro más sostenible.</p>
+                        <div class="card-info">
+                            <span>📅 5 Ago 2024</span>
+                            <span>👁️ 780</span>
+                            <span class="likes">❤️ 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // 🟢 Contadores Animados
+        function animateCounters() {
+            const counters = document.querySelectorAll(".counter h2");
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute("data-target");
+                let count = 0;
+                const increment = Math.max(1, Math.floor(target / 20));
+                const speed = 30;
+
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = counter.innerText.replace(/[0-9]+/, count);
+                        setTimeout(updateCount, speed);
+                    } else {
+                        counter.innerText = counter.innerText.replace(/[0-9]+/, target);
+                    }
+                };
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            observer.disconnect();
+                        }
+                    });
+                });
+
+                observer.observe(counter);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", animateCounters);
+    </script>
+
+</body>
+
+</html>
